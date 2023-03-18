@@ -1,0 +1,22 @@
+.about {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.xtrafondos.com/wallpapers/rick-y-morty-escapando-de-portal-9235.jpg');
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    height: 70rem;
+}
+
+.titulo{
+    font-family: OCR-A BT;
+    color:rgb(186, 8, 20);
+}
+
+.parrafo{
+    color: white;
+}
+

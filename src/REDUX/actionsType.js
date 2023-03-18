@@ -1,0 +1,7 @@
+export const AGREGAR_PERSONAJE = 'AGREGAR_PERSONAJE';
+
+export const ELIMINAR_PERSONAJE = 'ELIMINAR_PERSONAJE';
+
+export const FILTER = 'FILTER';
+
+export const ORDER = 'ORDER';
