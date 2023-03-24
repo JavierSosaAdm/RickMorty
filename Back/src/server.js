@@ -12,11 +12,11 @@ http.createServer((req, res) => {
         const data = characters.find((char) => char.id === Number(id));
         // console.log(character);
         if (data) {
-            res.writeHead(200, {'Content/Type': 'application/json'});
+            res.writeHead(200, {'Content- Type': 'application/json'});
             return res.end(JSON.stringify(data));
         } 
         else {
-            res.writeHead(404, {'Content/Type': 'application/json'});
+            res.writeHead(404, {'Content-Type': 'application/json'});
             return res.end(JSON.stringify({error: 'Character not found'}));
         }
     }
