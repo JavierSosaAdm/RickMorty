@@ -1,37 +1,105 @@
-const http = require('http');
-const characters = require('./utils/data');
+require("dotenv").config();
+const express = require('express');
+const router = require('./routes')
+const morgan = require('morgan');
+const cors = require('cors');
+
+const PORT = process.env.PORT || 3001;
+
+const server = express();
+server.use(express.json());
+server.use(morgan('dev'));
+server.use(cors());
+
+server.use('/', router);
+
+// server.use('/', router);
 
 
-http.createServer((req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+
+server.listen(PORT, () => {
+    console.log(`Server raised in port ${PORT}`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const { id, name, species, image, gender } = req.params;
+
+// const getCharById = (req, res) => {
     
-    // const { url } = req;
+//     const params = req.params;
+
+//     axios.get(`https://rickandmortyapi.com/api/character/`, (req, res) => {
+//     id 
+//         ?res.status(200).json({ id, name, species, image, gender })
+//         :res.status(500).json({error: error.message})
+//     } 
+//     )
+// }
+
+// const getCharDetail = (req, res) => {
     
-    if (req.url.includes('rickandmorty/character')) {
-        const id = req.url.split('/').at(-1);
-        const data = characters.find((char) => char.id === Number(id));
-        // console.log(character);
-        if (data) {
-            res.writeHead(200, {'Content- Type': 'application/json'});
-            return res.end(JSON.stringify(data));
-        } 
-        else {
-            res.writeHead(404, {'Content-Type': 'application/json'});
-            return res.end(JSON.stringify({error: 'Character not found'}));
-        }
-    }
-}).listen(3001, 'localhost')
+//     const params = req.params;
+
+//     axios.get(`https://rickandmortyapi.com/api/character/${id}`, (req, res) => {
+//         const id = req.params.id;
+//     id 
+//         ?res.status(200).json({ id, name, species, image, gender, origin })
+//         :res.status(500).json({error: error.message})
+//     } 
+//     )
+
+// }
+
+// const URL_BASE = 'http://localhost:3001/rickandmorty/';
+// const API_KEY = '267df1b89911.cf3df61db637ff9b4e81';
+
+
+// http
+//     .createServer((req, res) => {
+//         res.setHeader('Access-Control-Allow-Origin', '*');
     
-    // if (url.includes('rickandmorty/character/')) {
-    //     const id = Number(url.split('/').at(-1));
-    //     const character = data.find((char) => char.id === id);
-        
-    //     if (character) {
-    //         res.writeHead(200, {'Content/Type': 'application/json'});
-    //         return res.end(JSON.stringify(character)); 
-    //     } else {
-    //         res.writeHead(404, {'Content/Type': 'application/json'});
-    //         return res.end(JSON.stringify({error: 'Character not found'}));
-           
-    //     }
-    // }
+//     const {url} = req;
+
+//     if(url.includes('onsearch')){
+//         const id = url.split('/').at(-1);
+//         getCharById(res, id);
+//     }
+// })
+// .listen(3001, 'localhost');
+   
