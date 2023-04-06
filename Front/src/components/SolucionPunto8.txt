@@ -1,0 +1,8 @@
+App renderiza el Nav, y es donde esta declarada la función onSearch.
+1- Al componente Nav le pasan por propiedades la función onSearch (que setea el estado)
+2- El Nav recibe onSearch por parametros (props), el Nav solo renderiza a searchBar y se pasa a onSearch por props a otro componente (searchBar)
+3- searchBar resive a onSearch por props, y aquí se ejecuta onSearch al hacer click en el boton agregar (la cual se ejecuta a travez de una callBack), y aquí se pasa el estado
+4- en App onSearch debe resibir al estado en los parametros
+
+LAS PROPIEDADES SIEMPRE VAN DEL PADRE AL HIJO!!! en este caso de App => Nav => searchBar. 
+mientras que los evento viajan para arriba.

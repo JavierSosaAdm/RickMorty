@@ -1,0 +1,61 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-flow:wrap;
+    justify-content: center;
+    background-color: rgb(152, 40, 40);
+    border-radius: 1.5em;
+    padding: 25px;
+    font-family: OCR-A BT;
+    width: 18rem;
+    height: 22rem;
+    box-shadow: 10px 10px 10px 10px rgba(194, 202, 194, 0.904);
+    background-image: linear-gradient(to bottom, #000000, #3ff01c);
+    color:azure;
+    border: 5rem;
+ }
+
+ .card:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+   transition: 0.3s;
+ }
+
+ .card img {
+    display: flex;
+    width: 100%;
+    height: 65%;
+    border: 5px outset rgb(100, 93, 93);
+    border-color:olivedrab;
+ }
+
+ .gender {
+   display: flex;
+   align-items: center;
+   margin: 0%;
+   padding: 0px;
+}
+
+.name {
+   display: flex;
+   align-items: center;
+   margin: 0%;
+   padding: 0px;
+}
+
+.species {
+   display: flex;
+   align-items: center;
+   margin: 0%;
+   padding: 0px;
+}
+
+.divBox{
+   display: flex;
+   flex-direction: column;
+   /* background-image: url('https://www.gratistodo.com/wp-content/uploads/2021/09/Fondos-de-pantalla-Rick-y-Morty-Wallpapers-gratistodo.com-2.jpg'); */
+   /* background-size: cover; */
+   align-items: center;
+   justify-content: center;
+   height: 70rem;
+}
