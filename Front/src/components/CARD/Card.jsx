@@ -1,48 +1,49 @@
 import style from "./Card.module.css";
 import { Link } from "react-router-dom";
-import { eliminarPersonaje } from '../../REDUX/actions';
+import { eliminarPersonaje, agregarPersonaje} from '../../REDUX/actions';
 import axios from 'axios';
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
 
 
 
 
-const Card = ({ 
-  id, 
-  name, 
-  species, 
-  gender, 
-  image, 
-  eliminarPersonaje, 
-  myFavorites, 
-  onClose }) => {
+ const Card = (props) => {
   
- // const dispatch = useDispatch();
- // const myFavorites = useSelector(state => state.myFavorites)
+  const dispatch = useDispatch();
+
+    const { 
+      id, 
+      name, 
+      species, 
+      gender, 
+      image,  
+      onClose } = props
+ 
+  const myFavorites = useSelector(state => state.myFavorites)
  
  const [isFav, setIsFav] = useState(false);
 
-  const agregarPersonaje = (character) => {
+  // const agregarPersonaje = (character) => {
     
-    axios.post('http://localhost:3001/rickandmorty/fav', character)
-    .then((response) => console.log('OK'))
-  };
+  //   axios.post('http://localhost:3001/rickandmorty/fav', character)
+  //   .then((response) => console.log('OK'))
+  // };
   
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
-      //      dispatch(eliminarPersonaje(id));
-      eliminarPersonaje(id);
+           dispatch(eliminarPersonaje(id));
+      //eliminarPersonaje(id);
     } else {
       setIsFav(true);
-      //      dispatch(agregarPersonaje({ id, name, species, gender, image, onClose }))
-      agregarPersonaje({id, name, species, gender, image})
+          dispatch(agregarPersonaje({ id, name, species, gender, image, onClose }))
+      //props.agregarPersonaje(props)
     }
   }
   
-  useEffect((id) => {
+  useEffect(() => {
     myFavorites.forEach((fav) => {
        if (fav.id === id) {
           setIsFav(true);
@@ -73,27 +74,28 @@ const Card = ({
       
   }
   
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      // agregarPersonaje: (character)=> {
-      //     dispatch(agregarPersonaje(character))
-      //   },
-        eliminarPersonaje: (id) => {
-          dispatch(eliminarPersonaje(id))
-        }
-      }
-    }
+  export default Card;
+
+//   const mapDispatchToProps = (dispatch) => {
+//     return {
+//       agregarPersonaje: (character)=> {
+//           dispatch(agregarPersonaje(character))
+//         },
+//         eliminarPersonaje: (id) => {
+//           dispatch(eliminarPersonaje(id))
+//         }
+//       }
+//     }
     
-    const mapStateToProps = (state) => {
-      return {
-        myFavorites: state.myFavorites
-      };
-    };
+//     const mapStateToProps = (state) => {
+//       return {
+//         myFavorites: state.myFavorites
+//       };
+//     };
 
 
- export default connect (mapStateToProps, mapDispatchToProps) (Card);
+//  export default connect (mapStateToProps, mapDispatchToProps) (Card);
 
-//export default Card;
 
 
 

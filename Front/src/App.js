@@ -25,7 +25,7 @@ function App() {
 
   const onSearch = (id) => {
     const URL_BASE = 'http://localhost:3001';
-    //const API_KEY = '267df1b89911.cf3df61db637ff9b4e81';
+    // const API_KEY = '267df1b89911.cf3df61db637ff9b4e81';
     //
     if (characters.find((char) => char.id === id)) {
       return alert('Personaje repetido');
@@ -35,7 +35,8 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+           setCharacters((characters) => [...characters, data]);
+          //  console.log(characters)
          } else {
             window.alert('No hay personajes con ese ID');
          }

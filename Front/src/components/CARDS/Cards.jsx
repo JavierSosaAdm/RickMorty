@@ -1,7 +1,14 @@
 import Card from "../CARD/Card";
 import style from "./Cards.module.css";
+import { useSelector } from "react-redux";
 
- function Cards({ characters, onClose }) {
+
+
+function Cards({ characters, onClose }) {
+  //  const allCharacters = useSelector(state => state.allCharacters)
+  //  console.log(allCharacters);
+  //  const favorites = useSelector(state => state.myFavorites);
+  //  console.log(favorites);
   return (
     <div className={style.Cards}>
       {characters.map(({ id, name, species, gender, image }) => {

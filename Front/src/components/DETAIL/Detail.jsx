@@ -11,7 +11,7 @@ const Detail = () => {
     const [character, setCharacter] = useState({});
 
     useEffect(() => { // el useEffect simula los cilos de vida y me trae la información de un personaje en especifico
-      const URL_BASE = 'http://localhost:3001/rickandmorty';
+      const URL_BASE = 'http://localhost:3001';
       
       //
         fetch(`${URL_BASE}/detail/${detailId}`)

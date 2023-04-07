@@ -19,6 +19,13 @@ const SearchBar = ({ onSearch }) => {
       <button className={style.searchButton} onClick={() => onSearch(nombre)}>
         Agregar
       </button>
+      
+      <button className={style.searchButton} onClick={()=> {
+        let n = Math.floor(Math.random() * 826 )
+        return onSearch(n)
+      }}>
+        Random
+      </button>
     </div>
   );
 }

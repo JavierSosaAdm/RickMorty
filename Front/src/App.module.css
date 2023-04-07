@@ -5,7 +5,7 @@
    background-image: url('https://www.gratistodo.com/wp-content/uploads/2021/09/Fondos-de-pantalla-Rick-y-Morty-Wallpapers-gratistodo.com-2.jpg');
    background-size: cover;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
    height: 70rem;
 }
 

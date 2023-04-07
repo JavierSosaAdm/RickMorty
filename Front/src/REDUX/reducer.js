@@ -11,7 +11,7 @@ const reducer = (state= initialState, action) => {
     switch (action.type) {
         case AGREGAR_PERSONAJE: return{
             ...state,
-            myFavorites: [...state.allCharacters],
+            myFavorites: [...state.myFavorites, action.payload],
             allCharacters: [...state.allCharacters, action.payload]
         }
         case ELIMINAR_PERSONAJE: return {

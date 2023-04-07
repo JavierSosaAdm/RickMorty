@@ -1,16 +1,13 @@
 import { AGREGAR_PERSONAJE, ELIMINAR_PERSONAJE, FILTER, ORDER } from "./actionsType"
 
-// export const agregarPersonaje = (character) => {
-    
-//     return function(dispatch) {
-        
-//     }
-    
-//     // return {
-//     //     type: AGREGAR_PERSONAJE,
-//     //     payload: character
-//     // }  
-// };
+export const agregarPersonaje = (character) => {
+     
+    return {
+        type: AGREGAR_PERSONAJE,
+        payload: character
+    }  
+};
+
 
 export const eliminarPersonaje = (id) => {
     return {
